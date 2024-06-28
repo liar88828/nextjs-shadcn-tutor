@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { LucideGitPullRequestCreate } from "lucide-react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,9 +15,17 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <section className="container">
+          <main className="flex min-h-screen flex-col items-center justify-center gap-2 sm:gap-3 md:gap-5 py-5 ">
+            {children}
+          </main>
+        </section>
+      </body>
     </html>
   );
 }
